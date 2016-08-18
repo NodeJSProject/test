@@ -1,0 +1,30 @@
+<div class="block-area" id="tableHover" ng-controller="userListCtrl">
+	<div class="table-responsive overflow">
+		<table datatable="" class="table table-bordered table-hover tile">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Password</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="it in items">
+					<td>{{it._id}}</td>
+					<td><a href="#">{{it.username}}</a></td>
+					<td>{{it.email}}</td>
+					<td>{{it.password}}</td>
+					<td>
+						<div class="btn-group">
+	                        <a href="/user/read/{{it._id}}" class="btn btn-sm btn-alt">Detail</a>
+	                        <a href="/user/edit/{{it._id}}" class="btn btn-sm btn-alt">Update</a>
+	                        <a href="/#" class="btn btn-sm btn-alt" ng-click="delete()">Remove</a>
+	                    </div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
